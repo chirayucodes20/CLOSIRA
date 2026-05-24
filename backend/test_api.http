@@ -1,0 +1,37 @@
+GET http://127.0.0.1:8000/health
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/enquiry
+Content-Type: application/json
+
+{
+  "channel": "whatsapp",
+  "customer_name": "Aarav",
+  "message": "What is the price for the premium service?"
+}
+
+###
+
+POST http://127.0.0.1:8000/enquiry/1/follow-up
+Content-Type: application/json
+
+{
+  "delay_minutes": 15,
+  "message_template": "Hi, do you need any more details?"
+}
+
+###
+
+POST http://127.0.0.1:8000/enquiry/1/escalate
+Content-Type: application/json
+
+{
+  "reason": "Customer requested human agent"
+}
+
+###
+
+GET http://127.0.0.1:8000/enquiry/1/history
+Accept: application/json
