@@ -1,58 +1,220 @@
-# Closira Backend API
+# 🚀 Closira Backend API Server
 
-## Quick Setup & Run Instructions
-Follow these steps to run the project locally without any external dependencies.
+**Track:** Backend Assignment (Node.js / Express)  
+**Candidate:** Chirayu Sharma
 
-1. Install dependencies:
-pip install -r requirements.txt
+---
 
-2. Run the server:
-uvicorn main:app --reload
+# 🎯 Overview
 
-3. Test the API:
-- Interactive API Docs (Swagger UI): Open http://127.0.0.1:8000/docs in your browser.
-- HTTP Client: You can also test the endpoints using the provided test_api.http file via VS Code's REST Client extension.
+A robust and scalable RESTful API built to power the Closira mobile dashboard.
 
--------------------------------------------------
+This backend is designed to handle:
+- Inbound lead ingestion
+- Intelligent categorization
+- Lead routing
+- Escalation management
+- Business communication workflows
 
-## API Endpoints
+---
 
-Method: GET
-Endpoint: /health
-Description: Returns API status and database connectivity.
+# 🚀 Key Features Implemented
 
-Method: POST
-Endpoint: /enquiry
-Description: Creates a new inbound enquiry and triggers the async SOP matching task.
+## ✅ API Endpoints
 
-Method: POST
-Endpoint: /enquiry/{id}/follow-up
-Description: Schedules a follow-up for an open enquiry with a delay in minutes.
+Structured routes for:
+- Fetching leads
+- Handling escalations
+- Managing follow-ups
 
-Method: POST
-Endpoint: /enquiry/{id}/escalate
-Description: Marks an enquiry as escalated to a human agent along with a reason.
+---
 
-Method: GET
-Endpoint: /enquiry/{id}/history
-Description: Returns the full conversation history and status timeline for an enquiry.
+## ✅ Webhook Simulation
 
--------------------------------------------------
+Infrastructure ready to:
+- Receive real-time communication events
+- Process incoming webhooks
 
-## Engineering Decisions & Justifications
+Examples:
+- WhatsApp events
+- Email notifications
 
-### 1. Database: SQLite vs PostgreSQL
-Decision: I chose SQLite for this prototype.
-Reasoning: The assignment emphasized a "lightweight backend service" and a seamless setup experience for reviewers. SQLite requires zero external installation, meaning a reviewer can run this project instantly without configuring a local PostgreSQL server or Docker container. For a production, tenant-aware system handling high concurrency, PostgreSQL would be the absolute choice.
+---
 
-### 2. Async Processing: FastAPI Background Tasks vs Celery
-Decision: I chose FastAPI Background Tasks over Celery.
-Reasoning: While Celery is the industry standard for robust background jobs, it requires an external message broker (like Redis or RabbitMQ) and running a separate worker process. Given that the simulated SOP matching is a fast, CPU-lightweight task, introducing Celery would add unnecessary infrastructure complexity. BackgroundTasks keeps the service self-contained and easy to review while successfully fulfilling the asynchronous processing requirement.
+## ✅ Clean Architecture
 
--------------------------------------------------
+Implemented clear separation of concerns using:
+- Controllers
+- Routes
+- Services
 
-## Trade-offs & Known Limitations
+This ensures:
+- Maintainability
+- Scalability
+- Cleaner debugging
+- Better project organization
 
-* No Authentication: API endpoints are currently unprotected to keep testing frictionless and straightforward.
-* SOP Matching Logic: Currently using simple hardcoded substring matching rather than an actual NLP classification model, aligning with the scope of the assignment.
-* In-Memory Logging: Structured JSON logs are printed to the console rather than shipped to an external observability service (like Datadog or ELK).
+---
+
+## ✅ Error Handling
+
+Standardized JSON error responses for:
+- Invalid requests
+- Missing routes
+- Edge cases
+- Internal server issues
+
+This prevents unexpected frontend crashes.
+
+---
+
+# 🛠️ Tech Stack & Engineering Decisions
+
+## ⚙️ Backend Framework
+
+Built using:
+
+- Node.js
+- Express.js
+
+Chosen because of:
+- Lightweight architecture
+- Fast API routing
+- Strong ecosystem support
+- Scalability for future integrations
+
+---
+
+## 📦 Data Handling
+
+Currently uses:
+- Structured mock data
+- In-memory storage
+
+This was intentionally chosen for:
+- Faster assignment setup
+- Simplicity
+- Demonstrating API architecture without DB dependency
+
+The architecture is designed to easily integrate with:
+- MongoDB
+- PostgreSQL
+- MySQL
+- Firebase
+
+in future iterations.
+
+---
+
+# 💻 Setup & Run Instructions
+
+Follow these steps carefully to run the backend server locally.
+
+---
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone <your-repository-url>
+```
+
+---
+
+## 2️⃣ Navigate to Backend Folder
+
+```bash
+cd backend
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 4️⃣ Start the Server
+
+```bash
+npm start
+```
+
+---
+
+# 🌐 Server Information
+
+The backend server will typically run on:
+
+```bash
+http://localhost:3000
+```
+
+or on the port defined in your environment configuration.
+
+---
+
+# 📡 Example API Routes
+
+```bash
+GET    /api/leads
+GET    /api/escalations
+POST   /api/followups
+POST   /api/webhook
+```
+
+---
+
+# 📂 Folder Structure
+
+```bash
+/backend
+├── /controllers   # Request handling logic
+├── /routes        # API endpoint definitions
+├── /data          # Mock data / DB configs
+├── /services      # Business logic layer
+├── server.js      # Main application entry point
+└── package.json
+```
+
+---
+
+# ⚠️ Known Limitations & Trade-offs
+
+## 🔹 Database Persistence
+
+Currently:
+- No permanent database integration
+- Data resets on server restart
+
+This was intentionally kept lightweight for assignment scope.
+
+---
+
+## 🔹 Authentication
+
+Authentication and authorization layers:
+- JWT
+- OAuth
+- Role-based access
+
+are not implemented yet because they were outside the assignment requirements.
+
+---
+
+## 🔹 Production Deployment
+
+The project is optimized for:
+- Local development
+- Assignment evaluation
+
+Production-grade deployment features like:
+- Docker
+- CI/CD
+- Rate limiting
+- Caching
+- Logging infrastructure
+
+can be added in future iterations.
