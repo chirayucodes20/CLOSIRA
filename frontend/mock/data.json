@@ -1,0 +1,46 @@
+{
+  "summaryStats": {
+    "totalLeadsToday": 12,
+    "missedEnquiries": 3,
+    "openEscalations": 2,
+    "followUpsDue": 4
+  },
+  "leads": [
+    {
+      "id": "enq_001",
+      "customer": "Sarah M.",
+      "channel": "whatsapp",
+      "status": "escalated",
+      "reason": "Pricing complaint",
+      "receivedAt": "2026-05-25T09:14:00Z",
+      "summary": "Customer unhappy with quote, requested manager."
+    },
+    {
+      "id": "enq_002",
+      "customer": "Rahul T.",
+      "channel": "email",
+      "status": "new",
+      "reason": "General Inquiry",
+      "receivedAt": "2026-05-25T10:30:00Z",
+      "summary": "Wants to know the feature list of the premium plan."
+    },
+    {
+      "id": "enq_003",
+      "customer": "Amit K.",
+      "channel": "call",
+      "status": "qualified",
+      "reason": "Demo Booking",
+      "receivedAt": "2026-05-25T11:00:00Z",
+      "summary": "Agreed for a product demo next week."
+    }
+  ],
+  "followUps": [
+    {
+      "id": "fup_001",
+      "customer": "Priya S.",
+      "dueTime": "2026-05-25T14:00:00Z",
+      "messagePreview": "Hi Priya, are we still on for the meeting today?",
+      "completed": false
+    }
+  ]
+}
