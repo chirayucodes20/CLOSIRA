@@ -1,49 +1,165 @@
 # 📱 Closira Mobile Dashboard - Frontend
 
-> **Track:** Frontend Assignment (React Native / Expo)
-> **Candidate:** Chirayu Sharma
+**Track:** Frontend Assignment (React Native / Expo)  
+**Candidate:** Chirayu Sharma
+
+---
 
 ## 🎯 Overview
-A clean, component-driven mobile dashboard built for small and medium business owners to monitor inbound leads, escalations, and customer communications. Developed strictly following the Closira UI/UX guidelines, prioritizing mobile responsiveness, clear status indications, and a frictionless user experience.
+
+A clean, component-driven mobile dashboard built for small and medium business owners to monitor inbound leads, escalations, and customer communications.
+
+Developed strictly following the Closira UI/UX guidelines, prioritizing:
+- Mobile responsiveness
+- Clear status indications
+- Frictionless user experience
+
+---
 
 ## 🚀 Key Features Implemented
-* **Bottom Tab Navigation:** Intuitive routing between Home (Dashboard), Leads, Escalations, and Follow-ups.
-* **Stack Navigation:** Deep-dive Conversation Detail screen overlaying the tabs.
-* **Dynamic Badging System:** Strict color-coded visual hierarchy (e.g., WhatsApp: Green, Escalated: Red).
-* **Graceful Empty States:** User-friendly fallbacks for empty data lists, avoiding confusing blank screens.
+
+### ✅ Bottom Tab Navigation
+Intuitive routing between:
+- Home (Dashboard)
+- Leads
+- Escalations
+- Follow-ups
+
+### ✅ Stack Navigation
+Deep-dive Conversation Detail screen overlaying the tabs.
+
+### ✅ Dynamic Badging System
+Strict color-coded visual hierarchy:
+- WhatsApp → Green
+- Escalated → Red
+
+### ✅ Graceful Empty States
+User-friendly fallbacks for empty data lists, avoiding confusing blank screens.
+
+---
 
 ## 🛠️ Architecture & Engineering Decisions
-* **State & Data:** Completely decoupled from backend dependencies. Driven entirely by strict JSON mock data (`/mock/data.json`) to demonstrate pure API-readiness.
-* **Styling Choice (React Native StyleSheet):** Opted for standard `StyleSheet` over NativeWind. 
-  * *Reasoning:* For a concise 5-screen prototype, `StyleSheet` eliminates configuration overhead, keeps the bundle lightweight, and demonstrates a solid grasp of core React Native styling principles.
-* **Modular Components:** UI elements (like `LeadCard`, `ChannelBadge`, `StatusBadge`) are isolated in the `/components` directory, ensuring zero monolithic screen files.
 
-## 💻 Setup & Run Instructions
-Follow these precise steps to run the application locally:
+### 📦 State & Data
+Completely decoupled from backend dependencies.
 
-2. Start the Expo Development Server
+Driven entirely by strict JSON mock data:
 
-Bash
-npx expo start
-3. View the Application
+# 💻 Setup & Run Instructions
 
-Recommended (Mobile View in Web): Press w in the terminal to open the web bundler. Once it opens in your browser, press F12 to open Developer Tools and toggle the Mobile Device View (Ctrl+Shift+M) for the accurate layout.
+Follow these steps carefully to run the application locally.
 
-Physical Device: Scan the terminal's QR code using the Expo Go app (iOS/Android).
+---
 
-📂 Folder Structure
-Plaintext
-/frontend
-├── /components    # Reusable UI elements (Badges, Cards)
-├── /mock          # API-ready JSON data
-├── /screens       # Individual screen components
-├── App.js         # Core navigation setup
-└── package.json
-⚠️ Known Limitations & Trade-offs
-Visual State Management: Actions like "Mark as Done" or "Resolve" are purely visual UI implementations right now. They do not persist or mutate data, as backend integration was explicitly out of scope for this track.
+## 1️⃣ Clone the Repository
 
-Web Rendering: While fully functional on the web via Expo, the UI dimensions, padding, and shadows are strictly optimized for mobile device viewports.
+```bash
+git clone <your-repository-url>
+```
 
-**1. Install Dependencies**
+---
+
+## 2️⃣ Navigate to the Project Folder
+
+```bash
+cd frontend
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
 ```bash
 npm install
+```
+
+---
+
+## 4️⃣ Start the Expo Development Server
+
+```bash
+npx expo start
+```
+
+---
+
+# 📱 Running the App
+
+## Option 1 — Run on Web (Recommended for Quick Testing)
+
+Press:
+
+```bash
+w
+```
+
+inside the terminal after starting Expo.
+
+Then:
+1. Open Developer Tools (`F12`)
+2. Toggle Mobile Device View:
+
+```bash
+Ctrl + Shift + M
+```
+
+This provides the most accurate mobile preview.
+
+---
+
+## Option 2 — Run on Physical Device
+
+1. Install **Expo Go** on your phone
+2. Scan the QR code shown in the terminal
+
+Supported Platforms:
+- Android
+- iOS
+
+---
+
+## Option 3 — Run on Android Emulator
+
+Make sure Android Studio Emulator is running, then press:
+
+```bash
+a
+```
+
+inside the Expo terminal.
+
+---
+
+## Option 4 — Run on iOS Simulator (Mac Only)
+
+```bash
+i
+```
+
+inside the Expo terminal.
+
+---
+
+# ✅ Tech Stack
+
+- React Native
+- Expo
+- React Navigation
+- JavaScript
+- React Native StyleSheet
+
+---
+
+# 📂 Project Structure
+
+```bash
+/frontend
+├── /components
+├── /mock
+├── /screens
+├── App.js
+└── package.json
+```
+
+```bash
+/mock/data.json
